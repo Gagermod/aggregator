@@ -1,0 +1,30 @@
+.bloggersItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 12px;
+  padding-block: 14px;
+  padding-inline: 12px;
+  background: var(--color-black-elevate);
+  border: var(--border);
+  transition: var(--transition-duration);
+
+  @include hover {
+    &:not(:has(span:hover)) {
+      border-color: var(--color-green);
+      box-shadow: var(--box-shadow);
+    }
+  }
+}
+
+.blogger {
+  display: flex;
+  gap: fluid(16, 12);
+}
+
+.image {
+  height: 64px;
+  width: 64px;
+  object-fit: cover;
+  border: var(--border);
+}

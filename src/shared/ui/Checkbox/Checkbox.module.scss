@@ -1,0 +1,23 @@
+.checkbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: var(--color-gray-muted);
+  transition-duration: var(--transition-duration);
+
+  &.active {
+    color: var(--color-green);
+  }
+
+  @include hover {
+    &:not(.active) {
+      color: var(--color-white);
+      border-color: var(--color-white);
+    }
+  }
+}
+
+.starLabel {
+  @include square(44px);
+  @include flex-center();
+}

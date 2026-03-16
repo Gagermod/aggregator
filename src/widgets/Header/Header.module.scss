@@ -1,0 +1,11 @@
+.header {
+  background-color: var(--color-black-elevate);
+  border-bottom: var(--border);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 24px;
+}

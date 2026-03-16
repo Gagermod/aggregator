@@ -1,0 +1,41 @@
+.field {
+  position: relative;
+
+  &:has(.input:not(:placeholder-shown)) .label {
+    display: none;
+  }
+}
+
+.label {
+  position: absolute;
+  top: 50%;
+  left: 18px;
+  translate: 0 -50%;
+}
+
+.input {
+  --fieldInputPaddingX: 18px;
+
+  width: 100%;
+  height: var(--input-height);
+  padding-inline: var(--fieldInputPaddingX);
+  color: var(--color-white);
+  background-color: var(--color-black-elevate);
+  border: var(--border);
+
+  &:hover,
+  &:focus {
+    border-color: var(--color-green);
+    box-shadow: var(--box-shadow);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &[type='search'] {
+    &:placeholder-shown {
+      padding-right: calc(var(--fieldInputPaddingX) * 2);
+    }
+  }
+}
