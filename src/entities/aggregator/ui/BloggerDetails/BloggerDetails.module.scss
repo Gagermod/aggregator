@@ -1,0 +1,68 @@
+.bloggerImage {
+  border: var(--border);
+  width: 100%;
+  object-fit: cover;
+
+  @include mobile {
+    width: 200px;
+    height: 156px;
+  }
+}
+
+.bloggerName {
+  position: relative;
+  padding-left: 85px;
+  color: var(--color-green);
+
+  &::before {
+    content: '├─ name:';
+    position: absolute;
+    left: 0;
+    color: var(--color-gray-muted);
+  }
+}
+
+.status {
+  position: relative;
+  color: var(--color-green);
+  padding-left: 105px;
+
+  &::before {
+    content: '└─ status:';
+    position: absolute;
+    left: 0;
+    color: var(--color-gray-muted);
+  }
+}
+
+.domain {
+  @include blink;
+
+  position: relative;
+  padding-left: 105px;
+
+  &::before {
+    content: '├─ source:';
+    position: absolute;
+    left: 0;
+    color: var(--color-gray-muted);
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.bloggerName,
+.status,
+.domain {
+  color: var(--color-green);
+  line-height: 2;
+}
+
+.bloggerStatus {
+  @include mobile {
+    border-top: var(--border);
+    width: 100%;
+  }
+}

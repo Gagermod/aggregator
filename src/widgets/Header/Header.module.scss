@@ -1,11 +1,19 @@
 .header {
   background-color: var(--color-black-elevate);
   border-bottom: var(--border);
+  padding-block: 12px;
+  padding-inline: var(--padding);
 }
 
 .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-inline: 24px;
+  gap: var(--padding);
+}
+
+.decor {
+  @include mobile {
+    display: none;
+  }
 }

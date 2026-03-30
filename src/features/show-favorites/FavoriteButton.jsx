@@ -1,18 +1,20 @@
 import styles from './FavoriteButton.module.scss'
 import Checkbox from '@/shared/ui/Checkbox'
-import useBloggers from '@/entities/aggregator/model/useBloggers'
 
-const FavoriteButton = () => {
+const FavoriteButton = (props) => {
+  const { bloggersData } = props
 
-  const {
-    //showOnlyFavorites,
-  } = useBloggers()
-
-  const showOnlyFavorites = 0
+  const { showOnlyFavorites, handleToggleMode } = bloggersData
 
   return (
     <div className={styles.favoriteButton}>
-      <Checkbox checked={showOnlyFavorites} text='избранное'/>
+      <Checkbox
+        id="favoriteButton"
+        name="Show only favorites"
+        text="SHOW_FAVORITES"
+        checked={showOnlyFavorites}
+        onChange={handleToggleMode}
+      />
     </div>
   )
 }

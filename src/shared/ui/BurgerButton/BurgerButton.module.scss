@@ -2,13 +2,17 @@
   @include flex-center(true);
   @include square(40px);
 
+  z-index: 1000;
   padding: 0;
   background-color: transparent;
-  border: none;
-  border-radius: var(--border-radius);
+  border: var(--border);
 
   @include hover {
-    background-color: var(--color-azure-54);
+    border-color: var(--color-green);
+
+    .line {
+      stroke: var(--color-green);
+    }
   }
 
   &.isActive {
@@ -22,23 +26,19 @@
       }
     }
   }
-
-  &:not(.isActive) {
-    .line3 {
-      stroke-dasharray: 30 207;
-      stroke-dashoffset: -30;
-    }
-  }
 }
 
 .line {
   fill: none;
-  stroke: var(--color-white);
+  stroke: var(--color-gray-muted);
   stroke-width: 6;
   stroke-linecap: round;
   stroke-dasharray: 60 207;
-  transition: stroke-dasharray var(--transition-duration-longer) cubic-bezier(0.4, 0, 0.2, 1),
-  stroke-dashoffset var(--transition-duration-longer) cubic-bezier(0.4, 0, 0.2, 1);
+  transition:
+    stroke-dasharray var(--transition-duration-longer)
+      cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dashoffset var(--transition-duration-longer)
+      cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .line2 {

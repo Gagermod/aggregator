@@ -10,14 +10,15 @@ const BloggersList = (props) => {
     filteredBloggers,
     toggleFavoriteBlogger,
     searchQuery,
+    selectBlogger,
+    selectedBloggerId,
   } = bloggersData
 
   const isEmptyFilteredBloggers = filteredBloggers?.length === 0
 
   if (isEmptyFilteredBloggers) {
-    return (<div className={styles.emptyMessage}>Не найден</div>)
+    return <div className={styles.notFoundBlogger}>not_found</div>
   }
-
 
   return (
     <ul className={styles.bloggersList}>
@@ -26,6 +27,8 @@ const BloggersList = (props) => {
           searchQuery={searchQuery}
           key={blogger.id}
           toggleFavoriteBlogger={toggleFavoriteBlogger}
+          selectBlogger={selectBlogger}
+          selectedBloggerId={selectedBloggerId}
           {...blogger}
         />
       ))}

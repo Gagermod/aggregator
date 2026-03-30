@@ -1,41 +1,27 @@
 import styles from './Checkbox.module.scss'
 
 const Checkbox = (props) => {
-  const {
-    name,
-    text,
-    id,
-    checked,
-    toggleFavoriteBlogger,
-  } = props
-
+  const { name, text, id, checked, onChange } = props
 
   return (
-    <div className={`${styles.checkbox} ${checked ? styles.active : ''}`}>
-      <label
-        className={`visually-hidden`}
-        htmlFor={id}
-      >
+    <div
+      className={`${styles.checkbox} ${checked ? styles.active : ''}`}
+      onClick={(event) => event.stopPropagation()}
+    >
+      <label className={`visually-hidden`} htmlFor={id}>
         {name}
       </label>
       <input
-        className='visually-hidden'
+        className="visually-hidden"
         id={id}
         type="checkbox"
         checked={checked}
-        onChange={({ target }) => {
-          toggleFavoriteBlogger(id, target.checked)
-        }}
+        onChange={onChange}
       />
-      <label
-        className={styles.starLabel}
-        htmlFor={id}
-      >
-        <span>
-          {checked ? '[x]' : '[_]'}
-        </span>
+      <label className={styles.starLabel} htmlFor={id}>
+        <span aria-hidden="true">{checked ? '[x]' : '[_]'}</span>
+        {text && <span className={styles.text}>{text}</span>}
       </label>
-      {text && <span>{text}</span>}
     </div>
   )
 }

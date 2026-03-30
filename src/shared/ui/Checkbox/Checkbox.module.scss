@@ -4,6 +4,7 @@
   cursor: pointer;
   color: var(--color-gray-muted);
   transition-duration: var(--transition-duration);
+  user-select: none;
 
   &.active {
     color: var(--color-green);
@@ -18,6 +19,12 @@
 }
 
 .starLabel {
-  @include square(44px);
   @include flex-center();
+  @include square(44px);
+
+  gap: 10px;
+}
+
+.starLabel:has(span.text) {
+  @include square(auto);
 }

@@ -1,0 +1,24 @@
+.searchControls {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--padding);
+
+  @include tablet {
+    flex-direction: row;
+    column-gap: var(--padding);
+    justify-content: start;
+    align-items: start;
+    margin-inline: auto;
+  }
+
+  @include mobile {
+    flex-direction: column;
+    margin-top: -5px;
+    row-gap: var(--mobile-padding);
+    margin-bottom: var(--mobile-padding);
+  }
+
+  @include mobile-s {
+    margin-right: 100px;
+  }
+}

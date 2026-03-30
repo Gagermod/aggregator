@@ -9,7 +9,7 @@ const NoiseCanvas = () => {
     const ctx = canvas.getContext('2d')
 
     function resize() {
-      canvas.width = window.innerWidth / 4   // меньше разрешение = быстрее
+      canvas.width = window.innerWidth / 4 // меньше разрешение = быстрее
       canvas.height = window.innerHeight / 4
     }
     resize()
@@ -21,10 +21,10 @@ const NoiseCanvas = () => {
 
       for (let i = 0; i < data.length; i += 4) {
         const value = Math.random() * 255
-        data[i] = value      // R
-        data[i+1] = value    // G
-        data[i+2] = value    // B
-        data[i+3] = 255      // A
+        data[i] = value // R
+        data[i + 1] = value // G
+        data[i + 2] = value // B
+        data[i + 3] = 255 // A
       }
 
       ctx.putImageData(imageData, 0, 0)

@@ -1,20 +1,16 @@
 .bloggersList {
-  --shadowOffset: 30px;
-
   display: flex;
   flex-direction: column;
-  gap: fluid(16, 12);
-  overflow-y: auto;
+  gap: 10px;
   padding-block: var(--shadowOffset);
-  padding-left: var(--shadowOffset);
-  margin-block: calc(var(--shadowOffset) * -1);
-  margin-left: calc(var(--shadowOffset) * -1);
-  padding-right: 10px;
-  scrollbar-width: auto;
+  padding-inline: var(--shadowOffset);
+  border-top: var(--border);
+  overflow-y: auto;
+  scrollbar-width: thin;
   scrollbar-color: var(--color-green) transparent;
 
   &::-webkit-scrollbar {
-    width: 16px;
+    width: 8px;
   }
 
   &::-webkit-scrollbar-track {
@@ -24,4 +20,18 @@
   &::-webkit-scrollbar-thumb {
     background: var(--color-green);
   }
+
+  @include tablet {
+    height: 100vh;
+    padding-inline: 0;
+  }
+}
+
+.notFoundBlogger {
+  @include blink;
+
+  padding: 30px;
+  border-top: var(--border);
+  width: 100%;
+  text-align: center;
 }

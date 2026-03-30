@@ -20,8 +20,12 @@ const BgCanvas = () => {
     const fontSize = 14
     let columns = Math.floor(canvas.width / fontSize)
     const drops = new Array(columns).fill(0)
-    const speeds = new Array(columns).fill(0).map(() => 0.3 + Math.random() * 0.4)
-    const charTypes = new Array(columns).fill(0).map(() => Math.random() > 0.8 ? 'radio' : 'matrix')
+    const speeds = new Array(columns)
+      .fill(0)
+      .map(() => 0.3 + Math.random() * 0.4)
+    const charTypes = new Array(columns)
+      .fill(0)
+      .map(() => (Math.random() > 0.8 ? 'radio' : 'matrix'))
 
     const noiseParticles = []
     for (let i = 0; i < 200; i++) {
@@ -29,7 +33,7 @@ const BgCanvas = () => {
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
         size: Math.random() * 2,
-        speed: 0.5 + Math.random() * 2
+        speed: 0.5 + Math.random() * 2,
       })
     }
 
@@ -44,9 +48,10 @@ const BgCanvas = () => {
         const x = i * fontSize
         const y = drops[i] * fontSize
 
-        const brightness = charTypes[i] === 'radio'
-          ? 40 + Math.floor(Math.random() * 30)
-          : 25 + Math.floor(Math.random() * 20)
+        const brightness =
+          charTypes[i] === 'radio'
+            ? 40 + Math.floor(Math.random() * 30)
+            : 25 + Math.floor(Math.random() * 20)
         ctx.fillStyle = `rgb(${brightness}, ${brightness + (charTypes[i] === 'radio' ? 10 : 0)}, ${brightness})`
         ctx.font = `${fontSize}px monospace`
         ctx.fillText(char, x, y)

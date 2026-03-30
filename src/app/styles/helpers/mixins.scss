@@ -14,7 +14,7 @@
   visibility: visible;
 }
 
-@mixin flex-center ($isInline: false) {
+@mixin flex-center($isInline: false) {
   @if ($isInline) {
     display: inline-flex;
   } @else {
@@ -34,7 +34,9 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  translate: -50%, -50%;
+  translate:
+    -50%,
+    -50%;
 }
 
 @mixin abs-x {
@@ -46,7 +48,7 @@
 @mixin abs-cover {
   position: absolute;
   top: 50%;
-  translate:0  -50%;
+  translate: 0 -50%;
 }
 
 @mixin square($size) {
@@ -76,4 +78,21 @@
 @mixin disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+@mixin blink {
+  &::after {
+    content: '_';
+    animation: blink 1s step-end infinite;
+  }
+
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
 }

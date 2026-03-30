@@ -9,47 +9,40 @@ html::-webkit-scrollbar {
 }
 
 body {
-  @include fluid-text(20, 16);
-
   display: flex;
   flex-direction: column;
   font-family: var(--font-family-base);
   color: var(--color-gray-muted);
   background-color: var(--color-black);
+  font-size: 1rem;
 }
 
 main {
   flex-grow: 1;
 }
 
-h1, .h1,
-h2, .h2 {
+h1,
+.h1 {
   color: var(--color-green);
 }
 
-h3, .h3 {
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3 {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+h3,
+.h3 {
   color: var(--color-white);
 }
 
-h1, .h1 {
-  @include fluid-text(30, 24);
-
-  font-weight: 600;
-}
-
-h2, .h2 {
-  @include fluid-text(24, 20);
-
-  font-weight: 400;
-}
-
-h3, .h3 {
-  @include fluid-text(18, 16);
-
-  font-weight: 400;
-}
-
-h4, .h4 {
+h4,
+.h4 {
   @include fluid-text(14, 12);
 
   color: var(--color-azure-46);
@@ -85,10 +78,11 @@ a {
 mark {
   background-color: transparent;
   color: var(--color-green);
-  font-weight: 600;
 }
 
-html, body, #root {
+html,
+body,
+#root {
   height: 100%;
   margin: 0;
   padding: 0;

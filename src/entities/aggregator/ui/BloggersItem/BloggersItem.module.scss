@@ -2,12 +2,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  column-gap: 12px;
-  padding-block: 14px;
-  padding-inline: 12px;
+  column-gap: var(--padding);
+  padding-block: 12px;
+  padding-inline: 14px;
   background: var(--color-black-elevate);
   border: var(--border);
   transition: var(--transition-duration);
+
+  &.selected {
+    border-color: var(--color-green);
+  }
 
   @include hover {
     &:not(:has(span:hover)) {
@@ -19,12 +23,19 @@
 
 .blogger {
   display: flex;
-  gap: fluid(16, 12);
+  align-items: center;
+  gap: 10px;
+}
+
+.bloggerName {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .image {
-  height: 64px;
-  width: 64px;
+  height: 55px;
+  width: 55px;
   object-fit: cover;
   border: var(--border);
 }
